@@ -1,0 +1,798 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #061a2d;
+    --azul-claro: #102c45;
+    --amarelo: #ffc400;
+    --branco: #ffffff;
+    --cinza: #f4f4f4;
+    --texto: #111827;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cinza);
+    color: var(--texto);
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    height: 110px;
+    background: #061a2d;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: white;
+}
+
+.logo-icon {
+    font-size: 58px;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text strong {
+    font-size: 48px;
+    line-height: 40px;
+    letter-spacing: -3px;
+}
+
+.logo-text strong::first-letter {
+    color: white;
+}
+
+.logo-text span {
+    font-size: 10px;
+    letter-spacing: .5px;
+}
+
+
+/* MENU */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 37px 0;
+
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: var(--amarelo);
+}
+
+.menu a.active {
+    color: white;
+    border-bottom: 3px solid var(--amarelo);
+}
+
+
+/* BOTÕES DO HEADER */
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-login,
+.btn-register {
+    height: 51px;
+    padding: 0 27px;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn-login {
+    background: transparent;
+    color: white;
+
+    border: 1px solid white;
+}
+
+.btn-login:hover {
+    background: white;
+    color: var(--azul);
+}
+
+.btn-register {
+    background: var(--amarelo);
+    color: #111;
+
+    border: none;
+}
+
+.btn-register:hover {
+    background: #eab400;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 495px;
+
+    position: relative;
+
+    background-image:
+        url("img/casa.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: visible;
+}
+
+
+/* CAMADA ESCURA */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 22, 40, .98) 0%,
+            rgba(3, 22, 40, .88) 45%,
+            rgba(3, 22, 40, .55) 100%
+        );
+}
+
+
+/* CONTEÚDO */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1270px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 62px;
+}
+
+
+/* TEXTO */
+
+.hero-text {
+    width: 52%;
+}
+
+.hero-text h1 {
+    color: white;
+
+    font-size: 44px;
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    color: var(--amarelo);
+}
+
+.hero-text p {
+    color: white;
+
+    font-size: 19px;
+    line-height: 1.5;
+
+    max-width: 580px;
+
+    margin-bottom: 30px;
+}
+
+
+/* BOTÕES HERO */
+
+.hero-buttons {
+    display: flex;
+    gap: 17px;
+}
+
+.btn-primary,
+.btn-secondary {
+    height: 58px;
+
+    padding: 0 25px;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--amarelo);
+    color: #111;
+
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #eab400;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+
+    border: 1px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--azul);
+}
+
+
+/* ================= SEARCH BOX ================= */
+
+.search-box {
+    width: 590px;
+
+    padding: 28px 32px;
+
+    background: rgba(4, 28, 48, .88);
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(5px);
+}
+
+.search-box h2 {
+    color: white;
+
+    font-size: 25px;
+
+    margin-bottom: 19px;
+}
+
+
+/* INPUT */
+
+.search-input {
+    height: 61px;
+
+    background: white;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    overflow: hidden;
+}
+
+.search-input input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    padding: 0 20px;
+
+    font-size: 16px;
+}
+
+.search-input button {
+    width: 63px;
+
+    border: none;
+
+    background: var(--amarelo);
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+/* CATEGORIAS */
+
+.categories {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    margin-top: 29px;
+}
+
+.category {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    gap: 12px;
+}
+
+.category i {
+    font-size: 32px;
+
+    color: var(--amarelo);
+}
+
+.category span {
+    font-size: 15px;
+
+    font-weight: bold;
+
+    line-height: 1.4;
+}
+
+
+/* ================= ESTATÍSTICAS ================= */
+
+.statistics {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 1275px;
+
+    margin: -1px auto 0;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .12);
+
+    min-height: 128px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    align-items: center;
+
+    padding: 15px 25px;
+}
+
+.stat {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    min-height: 75px;
+
+    border-right: 1px solid #e5e5e5;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat-icon {
+    width: 76px;
+    height: 76px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--amarelo);
+
+    font-size: 31px;
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 27px;
+
+    margin-bottom: 6px;
+}
+
+.stat p {
+    font-size: 16px;
+
+    line-height: 1.4;
+}
+
+
+/* ================= COMO FUNCIONA ================= */
+
+.how-it-works {
+    max-width: 1275px;
+
+    margin: 30px auto;
+
+    padding-bottom: 25px;
+}
+
+.how-it-works > h2 {
+    text-align: center;
+
+    color: var(--azul);
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+}
+
+
+/* CARDS */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.step {
+    background: white;
+
+    min-height: 145px;
+
+    border-radius: 15px;
+
+    padding: 27px 17px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, .07);
+}
+
+.step-icon {
+    flex-shrink: 0;
+
+    width: 63px;
+    height: 63px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    color: var(--amarelo);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+}
+
+.step h3 {
+    font-size: 15px;
+
+    margin: 2px 0 8px;
+}
+
+.step p {
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ================= BANNER FINAL ================= */
+
+.bottom-banner {
+    max-width: 1240px;
+
+    margin: 0 auto 28px;
+
+    min-height: 78px;
+
+    padding: 0 70px;
+
+    background: var(--azul);
+
+    border-radius: 12px;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.banner-icon {
+    color: var(--amarelo);
+
+    font-size: 36px;
+}
+
+.bottom-banner h2 {
+    flex: 1;
+
+    font-size: 20px;
+}
+
+.bottom-banner button {
+    height: 52px;
+
+    min-width: 195px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--amarelo);
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.bottom-banner button:hover {
+    background: #eab400;
+}
+
+
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 1100px) {
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .hero-content {
+        padding: 50px 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .search-box {
+        width: 500px;
+    }
+
+    .statistics,
+    .how-it-works {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .header {
+        height: auto;
+
+        padding: 20px;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+    .menu {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        overflow-x: auto;
+    }
+
+    .menu a {
+        padding: 10px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .statistics {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .steps {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .bottom-banner {
+        margin-left: 25px;
+        margin-right: 25px;
+
+        padding: 20px 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        justify-content: center;
+    }
+
+    .logo {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .header-buttons {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        justify-content: center;
+    }
+
+    .categories {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+    .statistics {
+        grid-template-columns: 1fr;
+
+        margin: 0 15px;
+    }
+
+    .stat {
+        border-right: none;
+
+        border-bottom: 1px solid #e5e5e5;
+
+        padding: 15px;
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+
+        margin: 0 15px;
+    }
+
+    .bottom-banner {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+    .bottom-banner button {
+        width: 100%;
+    }
+}

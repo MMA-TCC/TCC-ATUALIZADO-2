@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entrar - MMA</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- LOGO -->
+
+        <div class="login-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div class="logo-text">
+                <strong>MMA</strong>
+                <span>MEU SERVIÇO MINHA ARTE</span>
+            </div>
+
+        </div>
+
+
+        <!-- CAIXA DE LOGIN -->
+
+        <div class="login-box">
+
+            <div class="login-header">
+
+                <div class="user-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+                <h1>Bem-vindo de volta!</h1>
+
+                <p>
+                    Entre na sua conta para continuar.
+                </p>
+
+            </div>
+
+
+            <form>
+
+                <!-- USUÁRIO -->
+
+                <div class="input-group">
+
+                    <label for="usuario">
+                        E-mail ou nome de usuário
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="usuario"
+                            placeholder="Digite seu e-mail ou usuário"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- SENHA -->
+
+                <div class="input-group">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="mostrarSenha()"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ESQUECI A SENHA -->
+
+                <div class="login-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Lembrar de mim
+                    </label>
+
+                    <a href="#">
+                        Esqueci minha senha
+                    </a>
+
+                </div>
+
+
+                <!-- BOTÃO -->
+
+                <button type="submit" class="btn-login-page">
+                    Entrar
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+
+            <!-- CADASTRO -->
+
+            <div class="register-link">
+
+                <p>
+                    Ainda não possui uma conta?
+                </p>
+
+                <a href="#">
+                    Cadastre-se
+                </a>
+
+            </div>
+
+
+            <!-- VOLTAR -->
+
+            <a href="index.html" class="back-home">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar para o início
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function mostrarSenha() {
+
+            const senha = document.getElementById("senha");
+
+            const icone = document.querySelector(".show-password i");
+
+            if (senha.type === "password") {
+
+                senha.type = "text";
+
+                icone.classList.remove("fa-eye");
+
+                icone.classList.add("fa-eye-slash");
+
+            } else {
+
+                senha.type = "password";
+
+                icone.classList.remove("fa-eye-slash");
+
+                icone.classList.add("fa-eye");
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
